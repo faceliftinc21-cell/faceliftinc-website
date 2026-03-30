@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FaceliftInc — B2B Cold Email Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F0F2F5;
+      --green: #1A2433;
+      --gold: #C9531E;
+      --gold-light: #F5D9CC;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--green);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background-color: var(--green);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .nav-logo {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-cta {
+      background-color: var(--gold);
+      color: var(--green);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      border: 2px solid var(--gold);
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background-color: transparent;
+      color: var(--gold);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background-color: var(--green);
+      padding: 100px 40px 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(32px, 5.5vw, 58px);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--cream);
+      line-height: 1.1;
+      max-width: 860px;
+      margin: 0 auto 28px;
+    }
+
+    .hero h1 .gold { color: var(--gold); }
+
+    .hero-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: rgba(240,242,245,0.8);
+      max-width: 620px;
+      margin: 0 auto 48px;
+      line-height: 1.65;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--green);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 22px 52px;
+      border-radius: 6px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 4px 24px rgba(201,83,30,0.25);
+      transition: all 0.2s ease;
+    }
+
+    .hero-btn:hover {
+      background-color: transparent;
+      color: var(--gold);
+      box-shadow: 0 4px 32px rgba(201,83,30,0.12);
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: rgba(240,242,245,0.45);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background-color: var(--gold-light);
+      border-top: 2px solid var(--green);
+      border-bottom: 2px solid var(--green);
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    .trust-bar p {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .trust-bar p span {
+      color: var(--gold);
+      margin: 0 16px;
+    }
+
+    /* ── SECTIONS WRAPPER ── */
+    .section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 42px);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background-color: var(--gold);
+      margin-bottom: 48px;
+    }
+
+    /* ── PAIN POINTS ── */
+    .pain-section {
+      background-color: var(--white);
+      border-top: 2px solid var(--green);
+      border-bottom: 2px solid var(--green);
+      padding: 80px 40px;
+    }
+
+    .pain-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pain-inner .section-divider { margin: 16px auto 48px; }
+
+    .pain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .pain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background-color: var(--cream);
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      padding: 24px 28px;
+      box-shadow: 3px 3px 0px var(--green);
+    }
+
+    .pain-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pain-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--green);
+      line-height: 1.5;
+    }
+
+    /* ── BENEFITS ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 16px;
+    }
+
+    .benefit-card {
+      background-color: var(--white);
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      padding: 36px 32px;
+      box-shadow: 4px 4px 0px var(--green);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .benefit-card:hover {
+      box-shadow: 6px 6px 0px var(--gold);
+      transform: translate(-2px, -2px);
+    }
+
+    .benefit-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .benefit-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .benefit-desc {
+      font-size: 14.5px;
+      font-weight: 400;
+      color: #2e3a4a;
+      line-height: 1.7;
+    }
+
+    /* ── PROCESS ── */
+    .process-section {
+      background-color: var(--green);
+      padding: 80px 40px;
+    }
+
+    .process-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .process-inner .section-label { color: var(--gold); }
+    .process-inner .section-title { color: var(--cream); }
+    .process-inner .section-divider { background-color: var(--gold); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .process-step {
+      background-color: rgba(255,255,255,0.06);
+      border: 2px solid rgba(240,242,245,0.25);
+      border-radius: 8px;
+      padding: 36px 32px;
+      transition: border-color 0.2s ease;
+    }
+
+    .process-step:hover {
+      border-color: var(--gold);
+    }
+
+    .step-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .step-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .step-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .step-list li {
+      font-size: 14px;
+      color: rgba(240,242,245,0.75);
+      padding: 7px 0 7px 20px;
+      position: relative;
+      border-bottom: 1px solid rgba(201,83,30,0.12);
+      line-height: 1.55;
+    }
+
+    .step-list li:last-child { border-bottom: none; }
+
+    .step-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ── GUARANTEE ── */
+    .guarantee-section {
+      background-color: var(--cream);
+      padding: 80px 40px;
+    }
+
+    .guarantee-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .guarantee-box {
+      background-color: var(--white);
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      padding: 56px 52px;
+      box-shadow: 6px 6px 0px var(--gold);
+      position: relative;
+    }
+
+    .guarantee-badge {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--green);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      border: 2px solid var(--green);
+    }
+
+    .guarantee-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .guarantee-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: var(--green);
+      line-height: 1.6;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background-color: var(--white);
+      border-top: 2px solid var(--green);
+      border-bottom: 2px solid var(--green);
+      padding: 80px 40px;
+    }
+
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background-color: var(--cream);
+      padding: 22px 28px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--green);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      user-select: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .faq-question:hover { background-color: var(--gold-light); }
+
+    .faq-question .faq-icon {
+      font-size: 20px;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 28px 24px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #2e3a4a;
+      border-top: 1px solid var(--gold-light);
+      background-color: var(--white);
+      padding-top: 20px;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── FINAL CTA ── */
+    .cta-section {
+      background-color: var(--green);
+      padding: 100px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold);
+    }
+
+    .cta-section .section-label { color: var(--gold); }
+
+    .cta-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--cream);
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+
+    .cta-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(240,242,245,0.7);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.65;
+    }
+
+    .cta-btn-large {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--green);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 26px 64px;
+      border-radius: 6px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 4px 32px rgba(201,83,30,0.2);
+      transition: all 0.2s ease;
+    }
+
+    .cta-btn-large:hover {
+      background-color: transparent;
+      color: var(--gold);
+    }
+
+    .cta-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(240,242,245,0.4);
+      font-weight: 300;
+    }
+
+    /* ── DAN CTA ── */
+    .dan-cta {
+      width: 100%;
+      background-color: var(--gold);
+      border: none;
+      padding: 28px 40px;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .dan-cta:hover { background-color: #a84018; }
+
+    .dan-cta-text {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--green);
+      border-top: 2px solid var(--gold);
+      padding: 28px 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: rgba(240,242,245,0.4);
+      letter-spacing: 0.5px;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-logo { font-size: 16px; }
+      .nav-cta { font-size: 11px; padding: 10px 16px; }
+      .hero { padding: 70px 20px 60px; }
+      .hero-btn { padding: 18px 36px; font-size: 15px; }
+      .trust-bar { padding: 16px 20px; }
+      .trust-bar p { font-size: 11px; letter-spacing: 1px; }
+      .section { padding: 60px 20px; }
+      .pain-section { padding: 60px 20px; }
+      .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
+      .process-section { padding: 60px 20px; }
+      .process-steps { grid-template-columns: 1fr; }
+      .guarantee-section { padding: 60px 20px; }
+      .guarantee-box { padding: 36px 24px; }
+      .faq-section { padding: 60px 20px; }
+      .faq-question { font-size: 15px; padding: 18px 20px; }
+      .faq-answer { padding: 16px 20px; }
+      .cta-section { padding: 70px 20px; }
+      .cta-btn-large { padding: 20px 36px; font-size: 16px; }
+      .dan-cta { padding: 22px 20px; }
+      .dan-cta-text { font-size: 15px; }
+      footer { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-logo">Facelift<span>Inc</span></div>
+    <a href="https://calendly.com/regan-ransomeholdingsltd/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-tag">FaceliftInc — Deal Maker for B2B Companies</div>
+    <h1>B2B Firms: Get <span class="gold">5–10 Qualified<br>Client Calls</span> Per Month<br>— Guaranteed</h1>
+    <p class="hero-sub">We help B2B firms generate a predictable flow of booked calls using personalized cold email — completely done-for-you.</p>
+    <a href="https://calendly.com/regan-ransomeholdingsltd/30min" target="_blank" class="hero-btn">Book Your Free Strategy Call →</a>
+    <p class="hero-note">Free 30-minute session &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; No fluff</p>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <div class="trust-bar">
+    <p>Staffing Firms <span>·</span> Manufacturing Companies <span>·</span> B2B Service Providers</p>
+  </div>
+
+  <!-- ── PAIN POINTS ── -->
+  <div class="pain-section">
+    <div class="pain-inner">
+      <div class="section-label">Sound Familiar?</div>
+      <h2 class="section-title">You're Not Alone.</h2>
+      <div class="section-divider"></div>
+      <div class="pain-grid">
+        <div class="pain-item">
+          <span class="pain-icon">❌</span>
+          <p class="pain-text">Inconsistent leads and unpredictable revenue — you never know where the next client is coming from</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-icon">❌</span>
+          <p class="pain-text">Wasting time on unqualified prospects who aren't the right fit and never convert</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-icon">❌</span>
+          <p class="pain-text">Spending hours on client acquisition instead of fulfillment — you're the bottleneck in your own growth</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BENEFITS ── -->
+  <section class="section">
+    <div class="section-label">The Solution</div>
+    <h2 class="section-title">Here's How We Help</h2>
+    <div class="section-divider"></div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-number">01</div>
+        <div class="benefit-title">Pay-Per-Meeting</div>
+        <p class="benefit-desc">No retainers, no lock-in. Just a one-time infrastructure fee and you pay per qualified call or meeting delivered. We win when you win.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-number">02</div>
+        <div class="benefit-title">Hyper-Personalized Outreach</div>
+        <p class="benefit-desc">Individually personalized emails your dream clients actually read. No templates. No blasts. Copy crafted specifically for each prospect and their pain points.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-number">03</div>
+        <div class="benefit-title">Fully Managed Campaigns</div>
+        <p class="benefit-desc">We handle everything — lead lists, infrastructure, copywriting, outreach, and booking. You show up to the calls. We fill the calendar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <div class="process-section">
+    <div class="process-inner">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Our Process</h2>
+      <div class="section-divider"></div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">Step 01</div>
+          <div class="step-title">Comprehensive Onboarding</div>
+          <ul class="step-list">
+            <li>We build a highly targeted lead list based on your Ideal Customer Profile</li>
+            <li>We craft custom scripts and personalized outreach sequences</li>
+          </ul>
+        </div>
+        <div class="process-step">
+          <div class="step-number">Step 02</div>
+          <div class="step-title">Infrastructure Setup & Campaign Launch</div>
+          <ul class="step-list">
+            <li>We handle domain and inbox setup with a 14–21 day warm-up period</li>
+            <li>Once warmed, we launch your campaign with full transparency</li>
+          </ul>
+        </div>
+        <div class="process-step">
+          <div class="step-number">Step 03</div>
+          <div class="step-title">Daily Management & Appointment Setting</div>
+          <ul class="step-list">
+            <li>Our team manually manages every reply — vetting and qualifying each prospect</li>
+            <li>We book qualified meetings directly to your calendar</li>
+          </ul>
+        </div>
+        <div class="process-step">
+          <div class="step-number">Step 04</div>
+          <div class="step-title">Continuous Optimization</div>
+          <ul class="step-list">
+            <li>We monitor performance daily and refine the campaign</li>
+            <li>Real-time adjustments to lists, copy, and technical settings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GUARANTEE ── -->
+  <div class="guarantee-section">
+    <div class="guarantee-inner">
+      <div class="section-label">Our Promise</div>
+      <h2 class="section-title">The Guarantee</h2>
+      <div class="section-divider" style="margin: 16px auto 40px;"></div>
+      <div class="guarantee-box">
+        <div class="guarantee-badge">Risk-Free Guarantee</div>
+        <div class="guarantee-headline">5 Qualified Meetings in 60 Days<br>— Or We Work for Free</div>
+        <p class="guarantee-text">"If we don't deliver 5 qualified meetings in the first 60 days, we'll work for free until we do."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FAQ ── -->
+  <div class="faq-section">
+    <div class="faq-inner">
+      <div class="section-label">Got Questions?</div>
+      <h2 class="section-title">Frequently Asked</h2>
+      <div class="section-divider"></div>
+      <div class="faq-list">
+
+        <div class="faq-item open">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How is this different from a traditional lead gen agency?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Most agencies charge a flat monthly retainer — you pay whether you get results or not. We don't work that way. You pay a one-time infrastructure setup fee, then per qualified meeting delivered. If we don't perform, we don't get paid. That alignment changes everything about how we operate.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What counts as a "qualified" meeting?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            We define qualified upfront — together. Typically it means a decision-maker from a company that matches your ICP, with a genuine interest in what you offer. We manually vet every reply before booking anything to your calendar. You don't waste time on tire-kickers.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How long before I start seeing results?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The first 14–21 days are infrastructure and warm-up — we're setting up premium domains and inboxes so your emails actually land. After that, campaigns go live and most clients see their first booked meetings within the first week of launch. The guarantee kicks in at 30 days.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Do I need to write the emails or be involved in the day-to-day?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Not at all. We handle everything — copywriting, list building, infrastructure, sending, and reply management. Your only job is to show up to the calls we book for you. We do ask for a solid onboarding session upfront so we can nail your ICP and offer positioning.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What industries do you work best with?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            We specialize in staffing firms, manufacturing companies, and B2B service providers doing $1M–$5M/year. These are businesses with a proven offer who need a reliable outbound engine — not startups still figuring out product-market fit.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Close other FAQ items when one opens (accordion behavior)
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+  <!-- ── FINAL CTA ── -->
+  <section class="cta-section">
+    <div class="section-label">Ready to Grow?</div>
+    <h2 class="cta-headline">Book Your Free<br>Strategy Call Today</h2>
+    <p class="cta-sub">Book a free, no-obligation 30-minute strategy session and discover exactly how we'll fill your calendar with qualified B2B meetings.</p>
+    <a href="https://calendly.com/regan-ransomeholdingsltd/30min" target="_blank" class="cta-btn-large">Book Your Free Strategy Call →</a>
+    <p class="cta-note">30 minutes &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Immediate clarity on your next move</p>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2026 FaceliftInc &nbsp;·&nbsp; B2B Cold Email Consulting &nbsp;·&nbsp; <a href="https://calendly.com/regan-ransomeholdingsltd/30min" target="_blank">Book a Call</a></p>
+  </footer>
+
+</body>
+</html>
